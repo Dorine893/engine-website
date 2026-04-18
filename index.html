@@ -495,6 +495,15 @@ backdrop-filter: blur(6px);        }
         .international-section {
             background: var(--cream);
             padding: 6rem 3rem;
+            
+        }
+        .card-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
+            border: 1px solid rgba(26, 35, 50, 0.08);
+            height: 100%;
         }
         
         .countries-container {
@@ -559,19 +568,36 @@ backdrop-filter: blur(6px);        }
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            
         }
         
-        .resource-btn {
-            background: var(--navy);
-            color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            display: block;
-        }
-        
+.resource-btn {
+    background: var(--navy);
+    color: white;
+    padding: 0; /* remove padding */
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+
+    display: flex;              /* KEY */
+    flex-direction: column;     /* stack h4 + p */
+    justify-content: center;    /* vertical center */
+    align-items: center;        /* horizontal center */
+
+    height: 120px;              /* fixed height = perfect centering */
+    width: 100%;
+}        
+.resource-btn h4 {
+    font-size: 1.4rem;
+    margin: 0; /* remove default margin */
+}
+
+.resource-btn p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin: 0;
+}
         .resource-btn:hover {
             transform: translateY(-3px);
         }
@@ -818,7 +844,7 @@ backdrop-filter: blur(6px);        }
             </div>
             <div class="hero-right">
                 <div class="stat-card">
-                    <span class="stat-number">8+</span>
+                    <span class="stat-number">10+</span>
                     <span class="stat-label">Workshops</span>
                 </div>
                 <div class="stat-card">
@@ -826,11 +852,11 @@ backdrop-filter: blur(6px);        }
                     <span class="stat-label">Students</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">4</span>
+                    <span class="stat-number">3</span>
                     <span class="stat-label">Countries</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">$850+</span>
+                    <span class="stat-number">$1000+</span>
                     <span class="stat-label">Raised</span>
                 </div>
             </div>
@@ -1068,46 +1094,75 @@ backdrop-filter: blur(6px);        }
     <section id="international" class="international-section">
         <h2 class="section-title">International Impact</h2>
         
-        <div class="countries-container">
-            <div class="country-circle">
-                <div class="country-flag">🇹🇭</div>
-                <div class="country-name">Thailand</div>
-            </div>
-            <div class="country-circle">
-                <div class="country-flag">🇹🇷</div>
-                <div class="country-name">Turkey</div>
-            </div>
-            <div class="country-circle">
-                <div class="country-flag">🇰🇪</div>
-                <div class="country-name">Kenya</div>
-            </div>
-        </div>
+
         
-        <div class="international-content">
-            <div class="kit-explanation">
-                <h3>International Workshop Kits</h3>
-                <p><!-- ADD EXPLANATION PARAGRAPH HERE about how kits work, what they contain, how teachers use them --></p>
-                <p>Each kit includes:</p>
-                <ul style="color: var(--text-dark); line-height: 1.8;">
-                    <li>Materials for 3 complete workshops</li>
-                    <li>Detailed teacher manuals</li>
-                    <li>Tutorial videos</li>
-                    <li>All necessary supplies</li>
-                </ul>
-            </div>
-            
-            <div class="resources-buttons">
-                <a href="https://www.youtube.com/@Engineorg" target="_blank" class="resource-btn">
-                    <h4>YouTube Tutorials</h4>
-                    <p>Watch step-by-step workshop videos</p>
-                </a>
-                <a href="English_Manuals_3.26.pdf" download class="resource-btn">
-                    <h4>Workshop Manuals (PDF)</h4>
-                    <p>Download complete teaching guides</p>
-                </a>
-            </div>
+<div class="international-content">
+
+    <!-- LEFT SIDE: KITS -->
+    <div class="kit-explanation card-box">
+        <h3>International Workshop Kits</h3>
+
+        <p>
+        ENGINE distributes hands-on engineering kits to partner organizations, enabling local, instructor-led workshops across multiple engineering disciplines.
+        </p>
+
+        <p style="margin-top: 1rem;">Each kit includes:</p>
+        <ul style="color: var(--text-dark); line-height: 1.8;">
+            <li>Materials for 3 complete engineering workshops</li>
+            <li>Detailed instructor manuals</li>
+            <li>Pre-recorded tutorial content</li>
+            <li>All required build components</li>
+        </ul>
+
+        <!-- KEEP YOUR BUTTONS HERE -->
+        <div class="resources-buttons" style="margin-top:2rem;">
+            <a href="https://www.youtube.com/@Engineorg" target="_blank" class="resource-btn">
+                <h4>YouTube Tutorials</h4>
+                <p>Watch step-by-step workshop videos</p>
+            </a>
+
+            <a href="English_Manuals_3.26.pdf" download class="resource-btn">
+                <h4>Workshop Manuals (PDF)</h4>
+                <p>Download complete teaching guides</p>
+            </a>
         </div>
-    </section>
+    </div>
+
+
+    <!-- RIGHT SIDE: ARDUINO -->
+    <div class="kit-explanation card-box">
+        <h3>Arduino Education Program</h3>
+
+        <p style="font-weight:500; color:#392A48;">
+            14-week program • ~35 students per site • Simulation → Physical Build
+        </p>
+
+        <p>
+        In partnership with organizations in Kenya and Zambia, ENGINE delivers a 14-week Arduino program reaching approximately 35 students per site.
+        Students participate in weekly live sessions focused on Arduino programming and circuit design using simulation environments.
+        </p>
+
+        <p>
+        Students develop coding logic, debugging skills, and system-level understanding before transitioning to physical hardware.
+        The program culminates in a final project, after which Arduino kits are distributed for real-world implementation.
+        </p>
+        <div style="display:flex; justify-content:center; gap:2rem; margin-top:2rem; flex-wrap:wrap;">
+    
+    <div style="text-align:center;">
+        <img src="Mumiasviperslogo.png" style="width:80px; height:80px; object-fit:contain;">
+        <p style="font-size:0.85rem; margin-top:0.4rem;">Kenya</p>
+    </div>
+
+    <div style="text-align:center;">
+        <img src="cccydlogo.png" style="width:80px; height:80px; object-fit:contain;">
+        <p style="font-size:0.85rem; margin-top:0.4rem;">Zambia</p>
+    </div>
+
+</div>
+    </div>
+
+</div>    
+</section>
 
     <!-- Partners Section -->
     <section id="partners" class="partners-section">
@@ -1122,6 +1177,22 @@ backdrop-filter: blur(6px);        }
             </div>
             
             <div class="partner-card">
+                <div class="partner-logo" style="background-image: url('cccydlogo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Charity Centre for Children and Youth Development (CCCYD)</h3>
+                <p class="partner-description">
+                    A Zambia-based nonprofit focused on expanding access to education and resources for underserved youth, partnering with ENGINE for STEM program delivery.
+                </p>
+                <a href="https://www.charitycentreforchildren-zambia.org/" target="_blank" class="btn">Visit Website</a>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo" style="background-image: url('Mumiasviperslogo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Mumias Vipers Academy</h3>
+                <p class="partner-description">A youth development academy in Kenya integrating athletics, academics, and digital skills. Partnering with ENGINE to deliver Arduino-based engineering education.</p>
+                <a href="https://www.mumiasvipers.com/" target="_blank" class="btn">Visit Website</a>
+            </div>
+
+            <div class="partner-card">
                 <div class="partner-logo" style="background-image: url('1774078131563_image.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
                 <h3 class="partner-name">Math Made Simple</h3>
                 <p class="partner-description">Collaborating to bring quality STEM workshops and educational opportunities to underserved communities.</p>
@@ -1134,6 +1205,8 @@ backdrop-filter: blur(6px);        }
                 <p class="partner-description">Working together to create accessible engineering solutions and inspire the next generation of innovators.</p>
                 <a href="http://equitasprosthetics.org" target="_blank" class="btn">Visit Website</a>
             </div>
+    
+</div>
         </div>
     </section>
 
