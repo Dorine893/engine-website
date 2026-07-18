@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regional Workshops — E.N.G.I.N.E.</title>
+    <link rel="icon" type="image/png" href="documents/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">E.N.G.I.N.E.</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="#pathways">Pathways</a></li>
+                <li class="nav-dropdown">
+                    <a href="#">Our Impact</a>
+                    <div class="dropdown-menu">
+                        <a href="regional.html" class="current">Regional Workshops<small>Local community programs</small></a>
+                        <a href="arduino.html">International Arduino<small>Kenya &amp; Zambia program</small></a>
+                        <a href="kits.html">STEM Kit Distribution<small>Manuals &amp; resources</small></a>
+                        <a href="stats.html">Impact Stats<small>Numbers &amp; metrics</small></a>
+                    </div>
+                </li>
+                <li><a href="get-involved.html" class="nav-cta">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page banner -->
+    <header class="page-banner" style="--page-accent: var(--electrical-blue);">
+        <div class="page-banner-inner">
+            <a href="index.html#impact" class="breadcrumb">← Back to Our Impact</a>
+            <h1>Regional Workshops</h1>
+            <p class="lede">Hands-on engineering and science workshops delivered directly to refugee communities and youth across the Houston area.</p>
+            <div class="page-banner-stats">
+                <div><strong>15</strong><span>Workshops Held</span></div>
+                <div><strong>350+</strong><span>Students Reached</span></div>
+                <div><strong>3</strong><span>Pathways Covered</span></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+
+        <!-- Learning Pathways (moved from home) -->
+        <div id="pathways" style="margin-bottom: 2rem;">
+            <h3 class="category-title" style="margin-top:0; margin-bottom: 0.8rem;">Our STEM Learning Pathways</h3>
+            <p style="color: var(--text-muted); max-width: 680px; margin-bottom: 0.9rem; font-size: 0.9rem;">ENGINE workshops are organized into three engineering pathways that introduce students to different fields of engineering and potential future careers.</p>
+            <div class="pathways-container">
+                <div class="pathway-box electrical">
+                    <div class="pathway-image"></div>
+                    <div class="pathway-text">
+                        <h3 class="pathway-title">Electrical Engineering</h3>
+                        <p class="pathway-desc">Circuits, electronics, and energy systems. Students learn how electricity powers the world.</p>
+                        <p class="pathway-careers">Careers: Electrical Engineer, Robotics Engineer, Hardware Engineer</p>
+                    </div>
+                </div>
+                <div class="pathway-box biotech">
+                    <div class="pathway-image"></div>
+                    <div class="pathway-text">
+                        <h3 class="pathway-title">Biotechnology</h3>
+                        <p class="pathway-desc">Biology meets engineering. Students explore lab science, medical technology, and research.</p>
+                        <p class="pathway-careers">Careers: Biomedical Engineer, Research Scientist, Doctor</p>
+                    </div>
+                </div>
+                <div class="pathway-box mechanical">
+                    <div class="pathway-image"></div>
+                    <div class="pathway-text">
+                        <h3 class="pathway-title">Mechanical Engineering</h3>
+                        <p class="pathway-desc">Design, machines, and problem solving through physical engineering projects.</p>
+                        <p class="pathway-careers">Careers: Mechanical Engineer, Aerospace Engineer, Product Designer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quicknav strip -->
+        <div class="workshop-quicknav-title">Browse Workshops by Type — click one to jump down</div>
+        <div class="workshop-quicknav">
+            <button class="quicknav-arrow" onclick="scrollTrack('quicknavTrack', -1)">&#8249;</button>
+            <div class="workshop-quicknav-track" id="quicknavTrack">
+                <a class="quicknav-item" onclick="goToWorkshop('workshop-waterfilter')">
+                    <img src="workshop images/waterfilter/IMG_8184.jpg" alt="" loading="lazy">
+                    <span>Water Filter</span>
+                </a>
+                <a class="quicknav-item" onclick="goToWorkshop('workshop-circuit')">
+                    <img src="workshop images/circuit/IMG_1589.jpeg" alt="" loading="lazy">
+                    <span>Circuit</span>
+                </a>
+                <a class="quicknav-item" onclick="goToWorkshop('workshop-micropipette')">
+                    <img src="workshop images/micropipette/IMG_3437.jpg" alt="" loading="lazy">
+                    <span>Micropipetting</span>
+                </a>
+                <a class="quicknav-item" onclick="goToWorkshop('workshop-holiday')">
+                    <img src="workshop images/holiday/IMG_7333.jpeg" alt="" loading="lazy">
+                    <span>Holiday LED Circuit</span>
+                </a>
+                <a class="quicknav-item" onclick="goToWorkshop('workshop-uhlibrary')">
+                    <img src="workshop images/uh library/IMG_8194.jpg" alt="" loading="lazy">
+                    <span>UH Library Circuit</span>
+                </a>
+                <a class="quicknav-item" onclick="goToWorkshop('workshop-pickleball')">
+                    <img src="workshop images/pickleball/IMG_7837.jpg" alt="" loading="lazy">
+                    <span>Pickleball Fundraiser</span>
+                </a>
+            </div>
+            <button class="quicknav-arrow" onclick="scrollTrack('quicknavTrack', 1)">&#8250;</button>
+        </div>
+
+        <h3 class="category-title" style="margin-top:0;">Refugee Community Workshops</h3>
+
+        <div class="workshop-card-grid" id="workshopList">
+
+            <div class="workshop-card mechanical" id="workshop-waterfilter">
+                <div class="workshop-photos">
+                    <div class="workshop-photo-page active">
+                        <img src="workshop images/waterfilter/IMG_8184.jpg" alt="" loading="lazy">
+                        <img src="workshop images/waterfilter/IMG_8186.jpg" alt="" loading="lazy">
+                        <img src="workshop images/waterfilter/IMG_8187.jpg" alt="" loading="lazy">
+                        <img src="workshop images/waterfilter/IMG_8188.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <div class="workshop-info">
+                    <h3>Water Filter Design Workshop</h3>
+                    <div class="workshop-date">August 7, 2025</div>
+                    <p class="workshop-description">Students designed and built functional water filters while learning about the critical importance of clean water access.</p>
+                    <div class="workshop-materials">
+                        <p>Materials list, instructions, and full write-up displayed here — see the download for the complete guide.</p>
+                        <a href="documents/water-filter-workshop-materials.pdf" download class="btn btn-outline">Download Materials</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workshop-card electrical" id="workshop-circuit">
+                <div class="workshop-photos">
+                    <div class="workshop-photo-page active">
+                        <img src="workshop images/circuit/IMG_1589.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/circuit/IMG_1592.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/circuit/IMG_8192.jpg" alt="" loading="lazy">
+                        <img src="workshop images/circuit/IMG_8783.jpeg" alt="" loading="lazy">
+                    </div>
+                    <div class="workshop-photo-page">
+                        <img src="workshop images/circuit/IMG_8784.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/circuit/IMG_8785.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/circuit/IMG_8787.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/circuit/IMG_8790.jpeg" alt="" loading="lazy">
+                    </div>
+                    <div class="workshop-photo-page">
+                        <img src="workshop images/circuit/IMG_8805.jpeg" alt="" loading="lazy">
+                    </div>
+                    <button class="wp-nav prev" onclick="cycleWorkshopPhotos(this, -1)">&#8249;</button>
+                    <button class="wp-nav next" onclick="cycleWorkshopPhotos(this, 1)">&#8250;</button>
+                    <div class="wp-dots">
+                        <button class="wp-dot active" onclick="goToWorkshopPhotoPage(this, 0)"></button>
+                        <button class="wp-dot" onclick="goToWorkshopPhotoPage(this, 1)"></button>
+                        <button class="wp-dot" onclick="goToWorkshopPhotoPage(this, 2)"></button>
+                    </div>
+                </div>
+                <div class="workshop-info">
+                    <h3>Circuit Workshop</h3>
+                    <div class="workshop-date">October 25, 2025</div>
+                    <p class="workshop-description">Partnered with Math Made Simple to guide students in an Afghan refugee community through an interactive circuit-building workshop.</p>
+                    <div class="workshop-materials">
+                        <p>Materials list, instructions, and full write-up displayed here — see the download for the complete guide.</p>
+                        <a href="documents/circuit-workshop-materials.pdf" download class="btn btn-outline">Download Materials</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workshop-card biotech" id="workshop-micropipette">
+                <div class="workshop-photos">
+                    <div class="workshop-photo-page active">
+                        <img src="workshop images/micropipette/IMG_3437.jpg" alt="" loading="lazy">
+                        <img src="workshop images/micropipette/IMG_7034.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/micropipette/IMG_3453.jpg" alt="" loading="lazy">
+                        <img src="workshop images/micropipette/IMG_6272.jpeg" alt="" loading="lazy">
+                    </div>
+                    <div class="workshop-photo-page">
+                        <img src="workshop images/micropipette/IMG_3454.JPG" alt="" loading="lazy">
+                        <img src="workshop images/micropipette/IMG_6266.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/micropipette/IMG_6267.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/micropipette/IMG_3440.jpg" alt="" loading="lazy">
+                    </div>
+                    <div class="workshop-photo-page">
+                        <img src="workshop images/micropipette/IMG_3439.JPG" alt="" loading="lazy">
+                    </div>
+                    <button class="wp-nav prev" onclick="cycleWorkshopPhotos(this, -1)">&#8249;</button>
+                    <button class="wp-nav next" onclick="cycleWorkshopPhotos(this, 1)">&#8250;</button>
+                    <div class="wp-dots">
+                        <button class="wp-dot active" onclick="goToWorkshopPhotoPage(this, 0)"></button>
+                        <button class="wp-dot" onclick="goToWorkshopPhotoPage(this, 1)"></button>
+                        <button class="wp-dot" onclick="goToWorkshopPhotoPage(this, 2)"></button>
+                    </div>
+                </div>
+                <div class="workshop-info">
+                    <h3>Micropipetting Workshop</h3>
+                    <div class="workshop-date">November 15, 2025</div>
+                    <p class="workshop-description">Brought laboratory science to life through an innovative micropipetting workshop where students practiced precision lab techniques.</p>
+                    <div class="workshop-materials">
+                        <p>Materials list, instructions, and full write-up displayed here — see the download for the complete guide.</p>
+                        <a href="documents/micropipetting-workshop-materials.pdf" download class="btn btn-outline">Download Materials</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workshop-card electrical" id="workshop-holiday">
+                <div class="workshop-photos">
+                    <div class="workshop-photo-page active">
+                        <img src="workshop images/holiday/IMG_7333.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/holiday/IMG_4396.jpg" alt="" loading="lazy">
+                        <img src="workshop images/holiday/IMG_2034.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/holiday/IMG_4395.jpg" alt="" loading="lazy">
+                    </div>
+                    <div class="workshop-photo-page">
+                        <img src="workshop images/holiday/IMG_4394.JPG" alt="" loading="lazy">
+                        <img src="workshop images/holiday/IMG_2035.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/holiday/IMG_2036.jpeg" alt="" loading="lazy">
+                        <img src="workshop images/holiday/IMG_4392.jpg" alt="" loading="lazy">
+                    </div>
+                    <div class="workshop-photo-page">
+                        <img src="workshop images/holiday/IMG_4397.jpg" alt="" loading="lazy">
+                        <img src="workshop images/holiday/IMG_2033.jpeg" alt="" loading="lazy">
+                    </div>
+                    <button class="wp-nav prev" onclick="cycleWorkshopPhotos(this, -1)">&#8249;</button>
+                    <button class="wp-nav next" onclick="cycleWorkshopPhotos(this, 1)">&#8250;</button>
+                    <div class="wp-dots">
+                        <button class="wp-dot active" onclick="goToWorkshopPhotoPage(this, 0)"></button>
+                        <button class="wp-dot" onclick="goToWorkshopPhotoPage(this, 1)"></button>
+                        <button class="wp-dot" onclick="goToWorkshopPhotoPage(this, 2)"></button>
+                    </div>
+                </div>
+                <div class="workshop-info">
+                    <h3>Holiday LED Circuit Workshop</h3>
+                    <div class="workshop-date">December 21, 2025</div>
+                    <p class="workshop-description">Students learned core electrical engineering concepts through festive creativity, building LED circuits integrated into cardboard holiday designs.</p>
+                    <div class="workshop-materials">
+                        <p>Materials list, instructions, and full write-up displayed here — see the download for the complete guide.</p>
+                        <a href="documents/holiday-led-workshop-materials.pdf" download class="btn btn-outline">Download Materials</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workshop-card electrical" id="workshop-uhlibrary">
+                <div class="workshop-photos">
+                    <div class="workshop-photo-page active">
+                        <img src="workshop images/uh library/IMG_8194.jpg" alt="" loading="lazy">
+                        <img src="workshop images/uh library/IMG_8193.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <div class="workshop-info">
+                    <h3>Circuit Building Workshop — UH Library</h3>
+                    <div class="workshop-date">October 14, 2025</div>
+                    <p class="workshop-description">Hosted an engaging electrical engineering workshop at the University of Houston Library where students explored circuit fundamentals.</p>
+                    <div class="workshop-materials">
+                        <p>Materials list, instructions, and full write-up displayed here — see the download for the complete guide.</p>
+                        <a href="documents/uh-library-workshop-materials.pdf" download class="btn btn-outline">Download Materials</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workshop-card fundraiser" id="workshop-pickleball">
+                <div class="workshop-photos">
+                    <div class="workshop-photo-page active">
+                        <img src="workshop images/pickleball/IMG_7837.jpg" alt="" loading="lazy">
+                        <img src="workshop images/pickleball/IMG_7839.jpg" alt="" loading="lazy">
+                        <img src="workshop images/pickleball/IMG_7841.jpg" alt="" loading="lazy">
+                        <img src="workshop images/pickleball/IMG_7845.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+                <div class="workshop-info">
+                    <h3>Rally for a Cause Pickleball Tournament</h3>
+                    <div class="workshop-date">December 13, 2025</div>
+                    <p class="workshop-description">Hosted an exciting community pickleball tournament raising over $250 to support STEM education materials and outreach programs.</p>
+                </div>
+            </div>
+
+            <!-- Blank placeholders — copy one of the workshop-card blocks above to turn these into real entries -->
+            <div class="workshop-card placeholder-workshop">+ Add a Workshop</div>
+            <div class="workshop-card placeholder-workshop">+ Add a Workshop</div>
+            <div class="workshop-card placeholder-workshop">+ Add a Workshop</div>
+
+        </div>
+
+        <div class="workshop-list-fade"></div>
+        <div class="show-more-wrap">
+            <button class="btn btn-outline" id="showMoreBtn" onclick="toggleWorkshopList()">Show All Workshops ↓</button>
+        </div>
+
+        <h3 class="category-title">Regional Team</h3>
+        <p style="color: var(--text-muted); max-width: 640px; margin-bottom: 1.5rem;">Fill in workshops led below as they're logged.</p>
+        <div class="int-team-row">
+            <div class="int-team-card">
+                <div class="team-photo" style="background-image: url('pfp/avyukt.jpeg');"></div>
+                <div class="team-name">Avyukt Satish</div>
+                <div class="team-role">Electrical Pathway Lead</div>
+                <div class="int-team-stats">
+                    <div><strong>Workshops Led:</strong> [Add]</div>
+                </div>
+            </div>
+            <div class="int-team-card">
+                <div class="team-photo" style="background-image: url('pfp/dhriti.jpeg');"></div>
+                <div class="team-name">Dhriti Ballikonda</div>
+                <div class="team-role">Biotechnology Pathway Lead</div>
+                <div class="int-team-stats">
+                    <div><strong>Workshops Led:</strong> [Add]</div>
+                </div>
+            </div>
+            <div class="int-team-card">
+                <div class="team-photo" style="background-image: url('pfp/simeon.jpeg');"></div>
+                <div class="team-name">Simeon Fekade</div>
+                <div class="team-role">Mechanical Pathway Lead</div>
+                <div class="int-team-stats">
+                    <div><strong>Workshops Led:</strong> [Add]</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="category-title">Support This Program</h3>
+        <p style="color: var(--text-muted); max-width: 620px; margin-bottom: 0.5rem;">Want to run one of these workshops with your own group? Everything above is free to reuse — support helps us keep making more.</p>
+        <div class="support-links">
+            <a href="https://www.amazon.com/registries/gl/guest-view/8C0PBJ6C3ENQ" target="_blank" class="resource-btn">
+                <h4>Workshop Materials Wishlist</h4>
+                <p>Amazon wishlist for supplies</p>
+            </a>
+            <a href="https://gofund.me/a45f699d6" target="_blank" class="resource-btn">
+                <h4>Support Our Workshops</h4>
+                <p>Donate via GoFundMe</p>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>E.N.G.I.N.E.</h3>
+                <p>Empowering New Generations in New Engineering — expanding access to hands-on STEM education worldwide.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <a href="team.html">Our Team</a>
+                <a href="#pathways">Pathways</a>
+                <a href="index.html#partners">Partners</a>
+            </div>
+            <div class="footer-section">
+                <h3>Our Impact</h3>
+                <a href="regional.html">Regional Workshops</a>
+                <a href="arduino.html">International Arduino</a>
+                <a href="kits.html">STEM Kit Distribution</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p>engineorgAA@gmail.com</p>
+                <a href="https://www.instagram.com/e.n.g.i.n.e._org/" target="_blank">@e.n.g.i.n.e._org</a>
+                <a href="get-involved.html">Get Involved →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2026 E.N.G.I.N.E. — Empowering New Generations in New Engineering</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

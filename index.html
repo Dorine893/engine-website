@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.N.G.I.N.E. — Empowering New Generations in New Engineering</title>
+    <link rel="icon" type="image/png" href="documents/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">E.N.G.I.N.E.</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="current">Home</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="regional.html#pathways">Pathways</a></li>
+                <li class="nav-dropdown">
+                    <a href="#">Our Impact</a>
+                    <div class="dropdown-menu">
+                        <a href="regional.html">Regional Workshops<small>Local community programs</small></a>
+                        <a href="arduino.html">International Arduino<small>Kenya &amp; Zambia program</small></a>
+                        <a href="kits.html">STEM Kit Distribution<small>Manuals &amp; resources</small></a>
+                        <a href="stats.html">Impact Stats<small>Numbers &amp; metrics</small></a>
+                    </div>
+                </li>
+                <li><a href="get-involved.html" class="nav-cta">Get Involved</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('slideshow/1.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/2.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/3.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/4.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/5.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/6.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/7.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/8.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/9.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/10.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('slideshow/11.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="slideshow-nav" id="slideshowNav"></div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <span class="eyebrow">Student-Led Nonprofit</span>
+                <h1>E.N.G.I.N.E.</h1>
+                <p>Empowering New Generations in New Engineering</p>
+                <p class="hero-desc">We bring hands-on STEM workshops, kits, and mentorship to underserved communities — from Houston to Kenya, Zambia, and beyond.</p>
+                <div class="hero-buttons">
+                    <a href="stats.html" class="btn btn-light">Explore Our Impact</a>
+                    <a href="team.html" class="btn" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4);">Meet the Team</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="stat-card">
+                    <span class="stat-number">26+</span>
+                    <span class="stat-label">RegionalWorkshops</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">850+</span>
+                    <span class="stat-label">Worldwide Students</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">International Schools </span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Regional Sites</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About + Team -->
+    <section id="team" class="about-team-section">
+        <div class="about-content">
+            <span class="eyebrow">About Us</span>
+            <h2 style="font-family:'Crimson Pro',serif;font-size:2.2rem;color:var(--navy);margin-bottom:1.2rem;">STEM access, one workshop at a time</h2>
+            <p>ENGINE stands for Empowering New Generations in Engineering. We are a student-led initiative dedicated to expanding access to STEM education, hands-on engineering experiences, and innovation opportunities for students around the world, especially in underprivileged communities.</p>
+            <p>Our mission is to make STEM education accessible, engaging, and impactful. Through hands-on workshop kits, educational manuals, mentorship, and community partnerships, we aim to spark curiosity, build technical skills, and empower students to become problem-solvers in their own communities.</p>
+            <p>ENGINE operates through three main pathways, and collaborates with schools, organizations, and community groups to bring engineering opportunities to students who may not otherwise have access to them.</p>
+        </div>
+
+        <div class="team-content">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/aylin.jpeg');"></div>
+                    <div class="team-name">Aylin Korkmaz</div>
+                    <div class="team-role">Co-Founder<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/dorine.jpeg');"></div>
+                    <div class="team-name">Dorine Zolfaghari</div>
+                    <div class="team-role">Co-Founder<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/ava.jpeg');"></div>
+                    <div class="team-name">Ava Cobb</div>
+                    <div class="team-role">Co-Founder<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/avyukt.jpeg');"></div>
+                    <div class="team-name">Avyukt Satish</div>
+                    <div class="team-role">Regional | Electrical<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/dhriti.jpeg');"></div>
+                    <div class="team-name">Dhriti Ballikonda</div>
+                    <div class="team-role">Regional | Biotechnology<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/simeon.jpeg');"></div>
+                    <div class="team-name">Simeon Fekade</div>
+                    <div class="team-role">Regional | Mechanical<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/shriya.JPG');"></div>
+                    <div class="team-name">Shriya Srinivasan</div>
+                    <div class="team-role">International | Arduino<span class="school">Elkins High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/dom.jpeg');"></div>
+                    <div class="team-name">Dominic Laverde</div>
+                    <div class="team-role">International | Arduino<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/liam.jpeg');"></div>
+                    <div class="team-name">Liam Dominguez</div>
+                    <div class="team-role">International | Arduino<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/gabriel.jpeg');"></div>
+                    <div class="team-name">Gabriel Dominguez</div>
+                    <div class="team-role">International | Arduino<span class="school">Clements High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/brandon.JPEG');"></div>
+                    <div class="team-name">Brandon Maseno</div>
+                    <div class="team-role">International | Arduino<span class="school">Elkins High School</span></div>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo" style="background-image: url('pfp/isabella.png');"></div>
+                    <div class="team-name">Isabella Young</div>
+                    <div class="team-role">International | Arduino<span class="school">Clements High School</span></div>
+                </div>
+            </div>
+            <div class="team-cta">
+                <a href="team.html" class="btn btn-outline">Meet the Full Team →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact preview: 4 squares -->
+    <section id="impact" class="section bg-cream">
+        <div class="section-header">
+            <span class="eyebrow">Our Impact</span>
+            <h2>Where the work happens</h2>
+            <p>Three ways ENGINE puts engineering education into students' hands — take a closer look at each.</p>
+        </div>
+        <div class="impact-preview-grid">
+            <a href="regional.html" class="impact-preview-card regional">
+                <div class="impact-preview-photos">
+                    <img src="workshop images/waterfilter/IMG_8184.jpg" alt="" loading="lazy">
+                    <img src="workshop images/circuit/IMG_1589.jpeg" alt="" loading="lazy">
+                    <img src="workshop images/micropipette/IMG_3437.jpg" alt="" loading="lazy">
+                    <img src="workshop images/holiday/IMG_7333.jpeg" alt="" loading="lazy">
+                </div>
+                <div class="impact-preview-body">
+                    <div class="impact-preview-metric">26  Workshops · 350+ Students</div>
+                    <h3>Regional Workshops</h3>
+                    <p>Hands-on STEM workshops for refugee communities and local youth across the Greater Houston area.</p>
+                    <span class="impact-preview-link">View past workshops →</span>
+                </div>
+            </a>
+            <a href="arduino.html" class="impact-preview-card arduino">
+                <div class="impact-preview-photos">
+                    <img src="International/impact1.jpg" alt="" loading="lazy">
+                    <img src="International/arduino_cover.png" alt="" loading="lazy">
+                    <img src="international/impact3.png" alt="" loading="lazy">
+                    <img src="international/mumias1.png" alt="" loading="lazy">
+                </div>
+                <div class="impact-preview-body">
+                    <div class="impact-preview-metric">14 Wks · 8 Schools/3 Countries · 500+ Students</div>
+                    <h3>International Arduino Program</h3>
+                    <p>A 14-week Arduino curriculum reaching students in Kenya, Lesotho, and Ethiopia through live sessions 3x a week.</p>
+                    <span class="impact-preview-link">View curriculum →</span>
+                </div>
+            </a>
+            <a href="kits.html" class="impact-preview-card kits">
+                <div class="impact-preview-photos">
+                    <img src="workshop images/circuit/IMG_8783.jpeg" alt="" loading="lazy">
+                    <img src="workshop images/circuit/IMG_8784.jpeg" alt="" loading="lazy">
+                    <img src="workshop images/micropipette/IMG_6272.jpeg" alt="" loading="lazy">
+                    <img src="workshop images/holiday/IMG_4396.jpg" alt="" loading="lazy">
+                </div>
+                <div class="impact-preview-body">
+                    <div class="impact-preview-metric">3 Workshop Kits per Package</div>
+                    <h3>Overseas STEM Kit Distribution</h3>
+                    <p>Workshop kits, manuals, and video tutorials shared with partner organizations worldwide.</p>
+                    <span class="impact-preview-link">View Kit Contents →</span>
+                </div>
+            </a>
+            <a href="get-involved.html" class="impact-preview-card involved">
+                <div class="impact-preview-photos">
+                    <img src="documents/get-involved-volunteer.jpg" alt="" loading="lazy">
+                    <img src="documents/get-involved-amazon.jpg" alt="" loading="lazy">
+                    <img src="documents/get-involved-gofundme.jpg" alt="" loading="lazy">
+                    <img src="documents/get-involved-youtube.jpg" alt="" loading="lazy">
+                </div>
+                <div class="impact-preview-body">
+                    <div class="impact-preview-metric">$1,200 / $5,000 Raised for Shipping</div>
+                    <h3>Get Involved</h3>
+                    <p>Volunteer, donate, or partner with us.</p>
+                    <span class="impact-preview-link">View ways to help →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section id="partners" class="section">
+        <div class="section-header">
+            <span class="eyebrow">Our Partners</span>
+            <h2>Organizations we work with</h2>
+            <p>ENGINE partners with schools and nonprofits locally and abroad to deliver our programs.</p>
+        </div>
+        <div class="partners-grid">
+            <div class="partner-card">
+                <div class="partner-logo" style="background-image: url('partners/kindred_logo.jpeg'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Kindred Vanguard</h3>
+                <p class="partner-description">Supporting our mission through community partnerships and resources.</p>
+                <a href="https://kindredvanguard.com/affiliations/" target="_blank" class="btn btn-outline">Visit Website</a>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo" style="background-image: url('partners/impactschool_logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Impact School</h3>
+                <p class="partner-description">A tech &amp; innovation school in Lesotho focused on coding, robotics &amp; IoT.</p>
+                <a href="https://impactschool.org.ls/" target="_blank" class="btn btn-outline">Visit Website</a>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo" style="background-image: url('partners/mumias_logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Mumias Vipers Academy</h3>
+                <p class="partner-description">A network of 5 schools in Mumias, Kenya, integrating athletics, academics &amp; digital skills.</p>
+                <a href="https://www.mumiasvipers.com/" target="_blank" class="btn btn-outline">Visit Website</a>
+            </div>
+            <div class="partner-card placeholder">
+                <div class="partner-logo" style="background-image: url('partners/ozone_logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Ozone School</h3>
+                <p class="partner-description">A leading Ethiopian school preparing students through innovation, STEM, and well-rounded education.</p>
+                <a href="https://ozoneschool.net/page/know-us" target="_blank" class="btn btn-outline">Visit Website</a>            
+                </div>
+                        <div class="partner-card placeholder">
+                <div class="partner-logo" style="background-image: url('partners/malaika_logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Malaika School</h3>
+                <p class="partner-description">A nonprofit school in the Democratic Republic of the Congo empowering students through education and opportunity.</p>
+                <a href="https://www.malaika.org/" target="_blank" class="btn btn-outline">Visit Website</a>            
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo" style="background-image: url('partners/mathmadesimple_logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Math Made Simple</h3>
+                <p class="partner-description">Bringing quality STEM workshops to underserved communities.</p>
+                <a href="http://math-made-simple.org" target="_blank" class="btn btn-outline">Visit Website</a>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo" style="background-image: url('partners/equitas_logo.png'); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Equitas Prosthetics</h3>
+                <p class="partner-description">Creating accessible engineering solutions together.</p>
+                <a href="http://equitasprosthetics.org" target="_blank" class="btn btn-outline">Visit Website</a>
+            </div>
+                <div class="partner-card">
+                <div class="partner-logo" style="background-image: url('partners/cccyd_logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <h3 class="partner-name">Charity Centre for Children &amp; Youth Development</h3>
+                <p class="partner-description">A Zambia-based nonprofit expanding access to education for underserved youth.</p>
+                <a href="https://www.charitycentreforchildren-zambia.org/" target="_blank" class="btn btn-outline">Visit Website</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>E.N.G.I.N.E.</h3>
+                <p>Empowering New Generations in New Engineering — expanding access to hands-on STEM education worldwide.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <a href="team.html">Our Team</a>
+                <a href="regional.html#pathways">Pathways</a>
+                <a href="index.html#partners">Partners</a>
+            </div>
+            <div class="footer-section">
+                <h3>Our Impact</h3>
+                <a href="regional.html">Regional Workshops</a>
+                <a href="arduino.html">International Arduino</a>
+                <a href="kits.html">STEM Kit Distribution</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p>engineorgAA@gmail.com</p>
+                <a href="https://www.instagram.com/engine_org/" target="_blank">@engine_org</a>
+                <a href="get-involved.html">Get Involved →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2026 E.N.G.I.N.E. — Empowering New Generations in New Engineering</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

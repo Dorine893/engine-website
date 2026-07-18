@@ -1,0 +1,2030 @@
+/* ============================================
+   ENGINE — Shared Styles
+   ============================================ */
+
+:root {
+    --navy: #1a2332;
+    --navy-light: #2a3747;
+    --electrical-blue: #2a3747;
+    --biotech-purple: #392A48;
+    --mechanical-gray: #6b7280;
+    --involve-gold: #a9772f;
+    --cream: #f5f3f0;
+    --off-white: #faf9f7;
+    --text-dark: #1a2332;
+    --text-muted: #6b7280;
+    --border-light: rgba(26, 35, 50, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(250, 249, 247, 0.98);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links > li > a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-links > li > a:hover,
+.nav-links > li > a.current {
+    color: var(--biotech-purple);
+}
+
+/* Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+}
+
+.nav-dropdown > a::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-top: -4px;
+    transition: transform 0.25s ease;
+}
+
+.nav-dropdown.open > a::after {
+    transform: rotate(-135deg);
+    margin-top: 2px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.9rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(26, 35, 50, 0.16);
+    border: 1px solid var(--border-light);
+    padding: 0.6rem;
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-8px);
+    transition: all 0.2s ease;
+}
+
+.nav-dropdown.open .dropdown-menu,
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.dropdown-menu a small {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.78rem;
+}
+
+.dropdown-menu a:hover {
+    background: var(--cream);
+}
+
+.nav-cta {
+    background: var(--navy);
+    color: white !important;
+    padding: 0.65rem 1.4rem;
+    border-radius: 30px;
+    font-weight: 600 !important;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: var(--navy);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 35, 50, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    padding: calc(0.9rem - 2px) calc(2rem - 2px);
+}
+
+.btn-outline:hover {
+    background: var(--navy);
+    color: white;
+}
+
+.btn-light {
+    background: white;
+    color: var(--navy);
+}
+
+/* ============================================
+   Section utilities
+   ============================================ */
+
+.section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+}
+
+.page-banner + .section {
+    padding-top: 2.75rem;
+}
+
+.section-tight {
+    padding: 4rem 3rem;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3.5rem;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--biotech-purple);
+    margin-bottom: 0.9rem;
+}
+
+.section-header h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.75rem;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.bg-cream { background: var(--cream); }
+
+/* ============================================
+   Page banner (interior pages)
+   ============================================ */
+
+.page-banner {
+    margin-top: 76px;
+    background: var(--navy);
+    color: white;
+    padding: 2.2rem 3rem 1.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner::after {
+    content: '';
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: var(--page-accent, var(--biotech-purple));
+    opacity: 0.35;
+    filter: blur(10px);
+}
+
+.page-banner-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb:hover { color: white; }
+
+.page-banner h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.page-banner p.lede {
+    font-size: 0.98rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 640px;
+}
+
+.page-banner-stats {
+    display: flex;
+    gap: 2.2rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.page-banner-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-banner-stats strong {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+}
+
+.page-banner-stats span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.65);
+}
+
+/* ============================================
+   Hero (home only)
+   ============================================ */
+
+.hero {
+    height: 100vh;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 76px;
+}
+
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active { opacity: 1; }
+
+.hero-slide:nth-child(1) { background-color: #1a2332; }
+.hero-slide:nth-child(2) { background-color: #2a3747; }
+.hero-slide:nth-child(3) { background-color: #392A48; }
+
+.slideshow-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+}
+
+.slide-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slide-dot.active {
+    background: white;
+    transform: scale(1.3);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(26, 35, 50, 0.97), rgba(26,35,50,0.5) 70%, transparent);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-left .eyebrow { color: #c9b8dd; }
+
+.hero-left h1 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.hero-left p {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 0.5rem;
+    max-width: 480px;
+}
+
+.hero-left .hero-desc {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.hero-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: white;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.stat-label {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   About + Team split section (home)
+   ============================================ */
+
+.about-team-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 4.5rem;
+    align-items: start;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Compact pathways, tucked under About Us text */
+
+.pathways-mini {
+    margin-top: 2.2rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.pathways-mini-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.pathway-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.pathway-chip:last-child { border-bottom: none; }
+
+.pathway-chip-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.pathway-chip.electrical .pathway-chip-dot { background: var(--electrical-blue); }
+.pathway-chip.biotech .pathway-chip-dot { background: var(--biotech-purple); }
+.pathway-chip.mechanical .pathway-chip-dot { background: var(--mechanical-gray); }
+
+.pathway-chip-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.pathway-chip-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   Team grid — shared (home = compact, team.html = larger)
+   ============================================ */
+
+.team-content h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.9rem;
+    color: var(--navy);
+    margin-bottom: 1.6rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem 1rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-photo {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: var(--biotech-purple);
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 0.7rem;
+}
+
+.team-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.15rem;
+    line-height: 1.3;
+}
+
+.team-role {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.team-role .school {
+    display: block;
+    color: var(--biotech-purple);
+    font-weight: 500;
+}
+
+.team-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* ============================================
+   Team page (team.html) — founders group photo + categories
+   ============================================ */
+
+.founders-group-photo {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 10;
+    border-radius: 18px;
+    margin: 0 auto 1.6rem;
+    background: var(--biotech-purple);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 14px 34px rgba(26,35,50,0.15);
+}
+
+.founders-names-row {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.founders-names-row .founder-name {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.1rem;
+}
+
+.founders-names-row .founder-school {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.team-category {
+    margin-bottom: 3.5rem;
+}
+
+.team-category-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 1.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.team-grid-lg {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.founder-detail-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.team-grid-lg .team-photo {
+    width: 100px;
+    height: 100px;
+}
+
+.team-grid-lg .team-name { font-size: 0.95rem; }
+.team-grid-lg .team-role { font-size: 0.8rem; }
+
+/* ============================================
+   Pathways page-level container (regional.html)
+   ============================================ */
+
+.pathways-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.pathway-box {
+    background: white;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 14px rgba(26, 35, 50, 0.06);
+    padding: 0.9rem 1.1rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: stretch;
+}
+
+.pathway-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(26, 35, 50, 0.1);
+}
+
+.pathway-image {
+    width: 10px;
+    height: 100%;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.pathway-box.electrical .pathway-image { background: var(--electrical-blue); }
+.pathway-box.biotech .pathway-image { background: var(--biotech-purple); }
+.pathway-box.mechanical .pathway-image { background: var(--mechanical-gray); }
+
+.pathway-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.pathway-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    color: var(--navy);
+}
+
+.pathway-desc {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+    line-height: 1.4;
+}
+
+.pathway-careers {
+    font-size: 0.7rem;
+    color: var(--biotech-purple);
+    margin-top: 0.3rem;
+    font-weight: 500;
+}
+
+/* ============================================
+   Impact preview grid (home) — 4 wide cards with photo previews
+   ============================================ */
+
+.impact-preview-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+}
+
+.impact-preview-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(26, 35, 50, 0.08);
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--border-light);
+}
+
+.impact-preview-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(26, 35, 50, 0.15);
+}
+
+.impact-preview-photos {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+}
+
+.impact-preview-photos img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.impact-preview-body {
+    width: 50%;
+    padding: 1.4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.impact-preview-metric {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--biotech-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.6rem;
+}
+
+.impact-preview-body h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+
+.impact-preview-body p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 1.1rem;
+}
+
+.impact-preview-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--navy);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.impact-preview-card:hover .impact-preview-link { color: var(--biotech-purple); }
+
+@media (max-width: 700px) {
+    .impact-preview-card { flex-direction: column; }
+    .impact-preview-photos { width: 100%; }
+    .impact-preview-body { width: 100%; }
+}
+
+/* ============================================
+   Detail page content blocks
+   ============================================ */
+
+.category-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    color: var(--navy);
+    margin-bottom: 1.8rem;
+    margin-top: 3rem;
+}
+
+.category-title:first-child { margin-top: 0; }
+
+/* ============================================
+   Workshop quicknav (top of regional.html)
+   ============================================ */
+
+.workshop-quicknav-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 0.9rem;
+}
+
+.workshop-quicknav {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 2.8rem;
+}
+
+.quicknav-arrow {
+    background: var(--navy);
+    color: white;
+    border: none;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.quicknav-arrow:hover { transform: scale(1.08); }
+
+.workshop-quicknav-track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    flex: 1;
+}
+
+.workshop-quicknav-track::-webkit-scrollbar { display: none; }
+
+.quicknav-item {
+    flex: 0 0 180px;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    background: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quicknav-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(26,35,50,0.12);
+}
+
+.quicknav-item img {
+    width: 100%;
+    height: 84px;
+    object-fit: cover;
+}
+
+.quicknav-item span {
+    display: block;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+/* ============================================
+   Workshop cards — 2-up grid, stacked photo grid + info
+   ============================================ */
+
+.workshop-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+}
+
+.workshop-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border-left: 10px solid;
+    box-shadow: 0 4px 16px rgba(26,35,50,0.05);
+}
+
+.workshop-card.electrical { border-color: var(--electrical-blue); }
+.workshop-card.biotech { border-color: var(--biotech-purple); }
+.workshop-card.mechanical { border-color: var(--mechanical-gray); }
+.workshop-card.fundraiser { border-color: var(--involve-gold); }
+
+.workshop-card {
+    display: flex;
+    align-items: stretch;
+}
+
+.workshop-photos {
+    position: relative;
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.workshop-photo-page {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.workshop-photo-page.active {
+    display: grid;
+}
+
+.workshop-photo-page img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.wp-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.55);
+    color: white;
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 0.85rem;
+    line-height: 1;
+    padding: 0;
+}
+
+.wp-nav.prev { left: 6px; }
+.wp-nav.next { right: 6px; }
+
+.wp-dots {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 2;
+}
+
+.wp-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.wp-dot.active { background: white; }
+
+@media (max-width: 480px) {
+    .workshop-card { flex-direction: column; }
+    .workshop-photos { width: 100%; }
+    .workshop-info { width: 100%; }
+}
+
+.workshop-info {
+    width: 50%;
+    padding: 1.2rem 1.4rem 1.4rem;
+    overflow: hidden;
+}
+
+.workshop-info h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 0.35rem;
+}
+
+.workshop-date {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.workshop-description {
+    color: var(--text-dark);
+    line-height: 1.65;
+    font-size: 0.9rem;
+}
+
+/* Split layout (arduino / kits) */
+
+.impact-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.impact-card {
+    background: white;
+    border-radius: 18px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 28px rgba(26,35,50,0.08);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.impact-card h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.7rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.impact-card p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+}
+
+.impact-highlight {
+    color: var(--biotech-purple);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.impact-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.impact-photo-grid img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.resource-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.resource-btn {
+    background: var(--navy);
+    color: white;
+    text-decoration: none;
+    padding: 1.8rem;
+    border-radius: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.resource-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(26,35,50,0.18);
+}
+
+.resource-btn h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+    font-family: 'Crimson Pro', serif;
+}
+
+.resource-btn p {
+    margin: 0;
+    opacity: 0.85;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Countries strip (arduino / kits pages)
+   ============================================ */
+
+.countries-strip {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem auto 0;
+    flex-wrap: wrap;
+}
+
+.country-pill {
+    text-align: center;
+}
+
+.country-flag {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: white;
+    margin: 0 auto 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    border: 3px solid var(--biotech-purple);
+}
+
+.country-name {
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Get Involved page
+   ============================================ */
+
+.involved-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto 5rem;
+}
+
+.action-card {
+    background: white;
+    padding: 2.2rem;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(26,35,50,0.08);
+    border: 1px solid var(--border-light);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(26,35,50,0.14);
+}
+
+.action-card .action-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.action-card .action-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.contact-strip {
+    max-width: 1100px;
+    margin: 0 auto 5rem;
+    background: var(--navy);
+    color: white;
+    border-radius: 18px;
+    padding: 2.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contact-strip h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.contact-strip-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-strip-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.contact-strip-links a:hover { opacity: 1; }
+
+.contact-strip-links strong {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.65;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+/* Partners */
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.partner-card {
+    background: white;
+    padding: 1.4rem 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(26, 35, 50, 0.07);
+}
+
+.partner-card.placeholder {
+    border: 2px dashed var(--border-light);
+    box-shadow: none;
+}
+
+.partner-logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 0.8rem;
+    background: var(--cream);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-name {
+    font-size: 0.92rem;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: 'Crimson Pro', serif;
+    line-height: 1.3;
+}
+
+.partner-description {
+    color: var(--text-muted);
+    margin-bottom: 0.9rem;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.partner-card .btn {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.78rem;
+}
+
+/* Compact partner-school grid used inside detail pages (e.g. arduino.html) */
+
+.partner-schools-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+/* ============================================
+   Program phase timeline
+   ============================================ */
+
+.phase-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2.5rem auto 0;
+    padding-left: 2rem;
+}
+
+.phase-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--border-light);
+}
+
+.phase-item {
+    position: relative;
+    padding-bottom: 2.2rem;
+}
+
+.phase-item:last-child { padding-bottom: 0; }
+
+.phase-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--biotech-purple);
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--biotech-purple);
+}
+
+.phase-item.prospective::before {
+    background: white;
+    box-shadow: 0 0 0 2px var(--text-muted);
+}
+
+.phase-date {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--biotech-purple);
+    margin-bottom: 0.3rem;
+}
+
+.phase-item.prospective .phase-date { color: var(--text-muted); }
+
+.phase-title {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+}
+
+.phase-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.phase-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    background: var(--cream);
+    color: var(--text-muted);
+    margin-left: 0.5rem;
+}
+
+/* ============================================
+   Shipment cards (kits.html)
+   ============================================ */
+
+.shipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-top: 2rem;
+}
+
+.shipment-grid.stacked {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 0;
+}
+
+.shipment-grid.stacked .shipment-photo-grid {
+    height: 110px;
+}
+
+.shipment-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(26,35,50,0.07);
+    border: 1px solid var(--border-light);
+}
+
+.shipment-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    height: 140px;
+}
+
+.shipment-photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shipment-info {
+    padding: 1.3rem 1.4rem 1.5rem;
+}
+
+.shipment-info h4 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+}
+
+.shipment-location {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 0.9rem;
+}
+
+.shipment-video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.shipment-video-link:hover { color: var(--biotech-purple); }
+
+/* ============================================
+   Workshop materials block (regional.html)
+   ============================================ */
+
+.workshop-materials {
+    margin-top: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.workshop-materials p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+    flex: 1;
+}
+
+.workshop-materials .btn {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+/* ============================================
+   Show-more workshop grid with fade
+   ============================================ */
+
+.workshop-card-grid .workshop-card:nth-child(n+7) {
+    display: none;
+}
+
+.workshop-card-grid.expanded .workshop-card {
+    display: block;
+}
+
+.workshop-list-fade {
+    margin-top: -90px;
+    height: 90px;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to bottom, transparent, var(--off-white));
+    pointer-events: none;
+}
+
+.workshop-card-grid.expanded + .workshop-list-fade {
+    display: none;
+}
+
+.show-more-wrap {
+    text-align: center;
+    margin: 0.5rem 0 3rem;
+}
+
+/* Blank placeholder workshop box */
+
+.workshop-card.placeholder-workshop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--border-light);
+    border-left: 2px dashed var(--border-light);
+    background: transparent;
+    box-shadow: none;
+    min-height: 100px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ============================================
+   Support links (Amazon wishlist + GoFundMe)
+   ============================================ */
+
+.support-links {
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.support-links .resource-btn {
+    flex: 1;
+    min-width: 260px;
+}
+
+.support-links.vertical {
+    flex-direction: column;
+}
+
+.support-links.vertical .resource-btn {
+    min-width: 0;
+}
+
+/* ============================================
+   Height-matched scrollable photo gallery (arduino.html)
+   ============================================ */
+
+.gallery-scroll-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+.gallery-scroll-intro {
+    flex-shrink: 0;
+}
+
+.gallery-scroll-body {
+    display: flex;
+    gap: 0.6rem;
+    flex: 1;
+    min-height: 220px;
+}
+
+.gallery-grid-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: min-content;
+    gap: 0.75rem;
+    scrollbar-width: none;
+    align-content: start;
+}
+
+.gallery-grid-scroll::-webkit-scrollbar { display: none; }
+
+.gallery-scroll-arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   International team row (arduino.html)
+   ============================================ */
+
+.int-team-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.int-team-card {
+    flex: 1;
+    min-width: 150px;
+    max-width: 190px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 4px 16px rgba(26,35,50,0.06);
+    border: 1px solid var(--border-light);
+}
+
+.int-team-card .team-photo {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 0.7rem;
+}
+
+.int-team-card .team-name {
+    font-size: 0.88rem;
+}
+
+.int-team-stats {
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
+    border-top: 1px dashed var(--border-light);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-align: left;
+}
+
+.int-team-stats div { margin-bottom: 0.2rem; }
+.int-team-stats strong { color: var(--navy); }
+
+/* ============================================
+   Captioned gallery (arduino.html)
+   ============================================ */
+
+.gallery-caption-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    background: white;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 95px;
+    object-fit: cover;
+}
+
+.gallery-caption {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.gallery-caption strong {
+    display: block;
+    color: var(--navy);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .workshop-card-grid { grid-template-columns: 1fr; }
+    .quicknav-item { flex-basis: 150px; }
+    .int-team-row { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.5rem; }
+    .int-team-card { flex: 0 0 150px; }
+}
+
+/* ============================================
+   Stats page (stats.html)
+   ============================================ */
+
+.stats-hero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.stats-hero-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(26,35,50,0.07);
+    border: 1px solid var(--border-light);
+}
+
+.stats-hero-number {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.stats-hero-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stats-breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.stats-breakdown-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 6px 20px rgba(26,35,50,0.06);
+    border-top: 6px solid var(--navy);
+}
+
+.stats-breakdown-card.electrical { border-color: var(--electrical-blue); }
+.stats-breakdown-card.biotech { border-color: var(--biotech-purple); }
+.stats-breakdown-card.mechanical { border-color: var(--mechanical-gray); }
+
+.stats-breakdown-card h4 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.stats-breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.9rem;
+}
+
+.stats-breakdown-row:last-child { border-bottom: none; }
+
+.stats-breakdown-row strong {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+}
+
+.stats-breakdown-row span {
+    color: var(--text-muted);
+}
+
+.stats-bar-chart {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stats-bar-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 60px;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stats-bar-row-label {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.stats-bar-track {
+    background: var(--cream);
+    border-radius: 20px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.stats-bar-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: var(--biotech-purple);
+}
+
+.stats-bar-row-value {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+.stats-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    max-width: 560px;
+    margin: 1.5rem auto 0;
+}
+
+@media (max-width: 900px) {
+    .stats-hero-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-breakdown-grid { grid-template-columns: 1fr; }
+    .stats-bar-row { grid-template-columns: 100px 1fr 50px; gap: 0.6rem; }
+}
+
+@media (max-width: 480px) {
+    .stats-hero-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+footer {
+    background: var(--navy-light);
+    color: white;
+    padding: 3.5rem 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-family: 'Crimson Pro', serif;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 0.92rem;
+}
+
+.footer-section a:hover { color: white; }
+
+.footer-section p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0.5rem;
+    font-size: 0.92rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 0.7;
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1080px) {
+    .team-grid-lg { grid-template-columns: repeat(3, 1fr); }
+    .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    .partner-schools-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+    .workshop-card-grid { grid-template-columns: 1fr; }
+    .impact-split { grid-template-columns: 1fr; }
+    .involved-hero-grid { grid-template-columns: 1fr; }
+    .about-team-section { grid-template-columns: 1fr; gap: 3.5rem; }
+    .shipment-grid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 768px) {
+    .nav-container { padding: 1.1rem 1.5rem; }
+    .nav-links {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--off-white);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0.5rem 1.5rem 1.5rem;
+        border-bottom: 1px solid var(--border-light);
+        transform: translateY(-130%);
+        opacity: 0;
+        transition: all 0.25s ease;
+        pointer-events: none;
+    }
+    .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .nav-links > li { width: 100%; }
+    .nav-links > li > a {
+        display: block;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+    .nav-dropdown .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border: none;
+        display: none;
+        min-width: 0;
+        padding: 0 0 0.5rem 1rem;
+    }
+    .nav-dropdown.open .dropdown-menu { display: flex; flex-direction: column; }
+    .nav-dropdown > a::after { margin-left: auto; }
+    .nav-toggle { display: flex; }
+    .nav-cta { text-align: center; margin-top: 0.5rem; }
+
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-overlay { width: 100%; background: linear-gradient(to top, rgba(26,35,50,0.97), rgba(26,35,50,0.55)); }
+    .hero-left h1 { font-size: 2.8rem; }
+    .hero-right { grid-template-columns: 1fr 1fr; }
+
+    .founders-names-row { gap: 1.5rem; }
+    .team-grid { grid-template-columns: repeat(3, 1fr); }
+    .team-grid-lg { grid-template-columns: repeat(2, 1fr); }
+    .pathways-container { grid-template-columns: 1fr; }
+    .impact-preview-grid { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    .partner-schools-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-content { grid-template-columns: 1fr 1fr; }
+    .contact-strip { flex-direction: column; align-items: flex-start; }
+    .section { padding: 4rem 1.5rem; }
+    .section-tight { padding: 3rem 1.5rem; }
+    .page-banner { padding: 3.5rem 1.5rem 3rem; }
+    .page-banner h1 { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+    .footer-content { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: 1fr; }
+    .partner-schools-grid { grid-template-columns: 1fr; }
+    .founder-detail-grid { grid-template-columns: 1fr; }
+}
