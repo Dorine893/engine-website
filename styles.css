@@ -1470,43 +1470,42 @@ nav {
 }
 
 .shipment-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     background: white;
     border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(26,35,50,0.07);
-    border: 1px solid var(--border-light);
 }
 
 .shipment-photo-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    height: 140px;
+    grid-template-columns: 1fr 1fr;
+    height: 280px; /* adjust as needed */
+    flex-shrink: 0;
 }
 
 .shipment-photo-grid img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .shipment-info {
-    padding: 1.3rem 1.4rem 1.5rem;
+    display: block;
+    padding: 24px;
+    background: white;
+    position: static;
+    z-index: 2;
 }
 
 .shipment-info h4 {
-    font-family: 'Crimson Pro', serif;
-    font-size: 1.1rem;
-    color: var(--navy);
-    margin: 0 0 0.3rem 0;
+    margin: 0 0 10px;
 }
 
 .shipment-location {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-bottom: 0.9rem;
+    margin-bottom: 16px;
 }
-
 .shipment-video-link {
     display: inline-flex;
     align-items: center;
