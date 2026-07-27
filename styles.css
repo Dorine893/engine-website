@@ -1498,7 +1498,7 @@ nav {
     font-family: 'Crimson Pro', serif;
     font-size: 1.1rem;
     color: var(--navy);
-    margin-bottom: 0.3rem;
+    margin: 0 0 0.3rem 0;
 }
 
 .shipment-location {
