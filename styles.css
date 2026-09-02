@@ -1479,14 +1479,12 @@ nav {
 
 .shipment-photo-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 280px; /* adjust as needed */
-    flex-shrink: 0;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .shipment-photo-grid img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
 }
