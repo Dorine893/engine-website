@@ -613,6 +613,24 @@ nav {
     margin: 0 auto 0.7rem;
 }
 
+/* NEW: initials placeholder — shown until a real photo is added */
+.team-photo.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--navy-light), var(--biotech-purple));
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Crimson Pro', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.team-grid-lg .team-photo.placeholder,
+.team-row .team-photo.placeholder {
+    font-size: 1.9rem;
+}
+
 .team-name {
     font-size: 0.85rem;
     font-weight: 600;
@@ -688,14 +706,52 @@ nav {
     border-bottom: 2px solid var(--border-light);
 }
 
+/* NEW: country label next to the school name */
+.team-category-place {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--biotech-purple);
+    margin-left: 0.8rem;
+    vertical-align: middle;
+}
+
 .team-grid-lg {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
+/* NEW: centered row — works for groups of 2, 3, or 9 (wraps 3 per row) */
+.team-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.team-row .team-member {
+    width: 180px;
+}
+
+.team-row .team-photo {
+    width: 100px;
+    height: 100px;
+}
+
+.team-row .team-name { font-size: 0.95rem; }
+.team-row .team-role { font-size: 0.8rem; }
+
 .founder-detail-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.founder-detail-grid .int-team-card {
+    max-width: none;
 }
 
 .team-grid-lg .team-photo {
@@ -1942,6 +1998,7 @@ footer {
 
 @media (max-width: 1080px) {
     .team-grid-lg { grid-template-columns: repeat(3, 1fr); }
+    .founder-detail-grid { grid-template-columns: repeat(2, 1fr); }
     .partners-grid { grid-template-columns: repeat(2, 1fr); }
     .partner-schools-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -2007,6 +2064,9 @@ footer {
     .founders-names-row { gap: 1.5rem; }
     .team-grid { grid-template-columns: repeat(3, 1fr); }
     .team-grid-lg { grid-template-columns: repeat(2, 1fr); }
+    .team-row { gap: 1.5rem; }
+    .team-row .team-member { width: 140px; }
+    .team-category-place { display: block; margin-left: 0; margin-top: 0.3rem; }
     .pathways-container { grid-template-columns: 1fr; }
     .impact-preview-grid { grid-template-columns: 1fr; }
     .partners-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2024,4 +2084,5 @@ footer {
     .partners-grid { grid-template-columns: 1fr; }
     .partner-schools-grid { grid-template-columns: 1fr; }
     .founder-detail-grid { grid-template-columns: 1fr; }
+    .team-row .team-member { width: 130px; }
 }
