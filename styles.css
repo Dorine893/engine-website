@@ -1,7 +1,3 @@
-/* ============================================
-   ENGINE — Shared Styles
-   ============================================ */
-
 :root {
     --navy: #1a2332;
     --navy-light: #2a3747;
@@ -747,7 +743,7 @@ nav {
 .team-row .team-role { font-size: 0.8rem; }
 
 .founder-detail-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .founder-detail-grid .int-team-card {
@@ -1998,7 +1994,7 @@ footer {
 
 @media (max-width: 1080px) {
     .team-grid-lg { grid-template-columns: repeat(3, 1fr); }
-    .founder-detail-grid { grid-template-columns: repeat(2, 1fr); }
+    .founder-detail-grid { grid-template-columns: repeat(3, 1fr); }
     .partners-grid { grid-template-columns: repeat(2, 1fr); }
     .partner-schools-grid { grid-template-columns: repeat(3, 1fr); }
 }
